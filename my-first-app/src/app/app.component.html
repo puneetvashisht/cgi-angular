@@ -1,4 +1,22 @@
-<h2>My First App</h2>
-<app-message></app-message>
-<app-badge></app-badge>
-<app-badge></app-badge>
+<h2 appHighlight>My First App</h2>
+<!-- <app-message></app-message> -->
+<p appHighlight>Test highlight directive</p>
+<!-- {{courses | json}} -->
+
+<!-- <app-card *ngFor="let course of courses" title={{course.title}} summary={{course.summary}}></app-card> -->
+<div class="container">
+    <div class="row">
+        <app-dropdown></app-dropdown>
+    </div>
+    <div class="row">
+        <button class="btn btn-primary" (click)="show()">Show</button>
+        <button class="btn btn-primary" (click)="hide()">Hide</button>
+    </div>
+    <div *ngIf="showCourses" class="row">
+        <app-card *ngFor="let course of courses" [title]="course.title" [summary]="course.summary" (courseDeleted)="handleCourseDeletion($event)"></app-card>
+    </div>
+</div>
+
+
+<!-- <app-card title="Angular" summary="Framework from google!"></app-card> -->
+<!-- <app-card title="React" summary="Library from facebook"></app-card> -->
