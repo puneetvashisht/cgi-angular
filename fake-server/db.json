@@ -1,0 +1,24 @@
+{
+  "courses": [
+    {
+      "id": 1,
+      "title": "Angular",
+      "summary": "Framework from google!"
+    },
+    {
+      "id": 3,
+      "title": "NodeJS",
+      "summary": "Server side JS!"
+    },
+    {
+      "id": 4,
+      "title": "Ember",
+      "summary": "Open source front-end!"
+    },
+    {
+      "title": "Postman",
+      "summary": "REST Api testing tool",
+      "id": 5
+    }
+  ]
+}
