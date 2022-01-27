@@ -1,11 +1,13 @@
 <h2 appHighlight>My First App</h2>
 <!-- <app-message></app-message> -->
-<p appHighlight>Test highlight directive</p>
+<!-- <p appHighlight>Test highlight directive</p> -->
 <!-- {{courses | json}} -->
 
 <!-- <app-card *ngFor="let course of courses" title={{course.title}} summary={{course.summary}}></app-card> -->
 <div class="container">
-    <div class="row">
+    <app-first></app-first>
+    <app-second></app-second>
+    <!-- <div class="row">
         <app-dropdown></app-dropdown>
     </div>
     <div class="row">
@@ -14,7 +16,7 @@
     </div>
     <div *ngIf="showCourses" class="row">
         <app-card *ngFor="let course of courses" [title]="course.title" [summary]="course.summary" (courseDeleted)="handleCourseDeletion($event)"></app-card>
-    </div>
+    </div> -->
 </div>
 
 

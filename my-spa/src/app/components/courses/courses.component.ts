@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { CourseService } from 'src/app/services/course.service';
 
 @Component({
   selector: 'app-courses',
@@ -8,13 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CoursesComponent implements OnInit {
 
-  constructor(private http: HttpClient) { }
+  constructor(private courseService: CourseService) { }
 
   ngOnInit(): void {
     console.log('Component is initialized...');
-    this.http.get('http://localhost:3000/courses/')
-    .subscribe((res: any)=> {
-      console.log(res);
+    this.courseService.fetchAllCourses()
+    .subscribe(res=>{
       this.courses = res;
     })
   }
@@ -32,7 +32,8 @@ export class CoursesComponent implements OnInit {
     this.courses = remainingList;
 
     // http delete
-    this.http.delete('http://localhost:3000/courses/' + matchedCourse[0].id)
+    // this.http.delete('http://localhost:3000/courses/' + matchedCourse[0].id)
+    this.courseService.deleteCourse(matchedCourse[0].id)
     .subscribe(res=> {
       console.log(res);
     })

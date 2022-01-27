@@ -6,19 +6,24 @@
       "summary": "Framework from google!"
     },
     {
-      "id": 3,
-      "title": "NodeJS",
-      "summary": "Server side JS!"
-    },
-    {
       "id": 4,
       "title": "Ember",
       "summary": "Open source front-end!"
     },
     {
       "title": "Postman",
-      "summary": "REST Api testing tool",
+      "summary": "REST API testing tool",
       "id": 5
+    },
+    {
+      "title": "Angular",
+      "summary": "framework from google!",
+      "id": 6
+    },
+    {
+      "title": "Angular",
+      "summary": "framework from google!",
+      "id": 7
     }
   ]
 }

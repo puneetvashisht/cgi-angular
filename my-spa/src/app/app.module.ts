@@ -10,6 +10,12 @@ import { BadgeComponent } from './components/badge.component';
 import { CardComponent } from './components/card/card.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AddCourseComponent } from './components/add-course/add-course.component';
+import { TemplateDrivenComponent } from './components/template-driven/template-driven.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DataDrivenComponent } from './components/data-driven/data-driven.component';
+import { UpdateCourseComponent } from './components/update-course/update-course.component';
+import { PageNotFoundComponent } from './components/pagenotfount.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -19,12 +25,19 @@ import { AddCourseComponent } from './components/add-course/add-course.component
     CoursesComponent,
     BadgeComponent,
     CardComponent,
-    AddCourseComponent
+    AddCourseComponent,
+    TemplateDrivenComponent,
+    DataDrivenComponent,
+    UpdateCourseComponent,
+    PageNotFoundComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

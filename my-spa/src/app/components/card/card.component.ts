@@ -9,6 +9,7 @@ export class CardComponent implements OnInit {
 
   @Input('title') title: string = 'Default Title'
   @Input('summary') summary: string = ''
+  @Input('id') id: string = ''
 
   @Output('courseDeleted') courseDeleted: EventEmitter<string> = new EventEmitter<string>();
 
