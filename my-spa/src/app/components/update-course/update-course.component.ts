@@ -26,6 +26,7 @@ export class UpdateCourseComponent implements OnInit {
 
     // console.log(this.route.params)
 
+    this.route.queryParams
 
     this.route.params.subscribe(params => {
       console.log(params);

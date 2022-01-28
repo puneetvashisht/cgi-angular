@@ -1,4 +1,32 @@
-<p>login works!</p>
-<!-- Email/ Password input fields and do http communication to authenticate user-->
+<div class="container">
+    <mat-card class="card-box">
+        <mat-card-content>
+            <div class="box box2" style="flex: 1 2 100%;">
 
-<button (click)="login()">Login</button>
+                <form (submit)="onLogin(loginForm)" #loginForm="ngForm">
+                    <h1 style="color: #CAD5E2;">Welcome Back!</h1>
+                    <p style="color: #CAD5E2;">Please enter your mail id and password.</p>
+                    <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>Email</mat-label>
+                        <input name="email" matInput class="form-control input-dark" ngModel type="email"
+                            placeholder="E-Mail ID" #emailInput="ngModel" required email>
+                        <mat-error *ngIf="emailInput.invalid">Please enter a valid email.</mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>Password</mat-label>
+                        <input type="password" matInput name="password" class="form-control input-dark" ngModel
+                            placeholder="Password" #passwordInput="ngModel" required>
+                        <mat-error *ngIf="passwordInput.invalid">Please enter a valid password.</mat-error>
+                    </mat-form-field>
+
+                    <button class="btn bttn-dark form-control" color="primary" type="submit">Login</button>
+
+                </form>
+
+            </div>
+
+            <!-- < -->
+        </mat-card-content>
+    </mat-card>
+</div>
+<!-- <button mat-raised-button color="primary" (click)="login()">Login</button> -->

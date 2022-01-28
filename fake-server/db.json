@@ -25,5 +25,20 @@
       "summary": "framework from google!",
       "id": 7
     }
+  ],
+  "login": {
+    "auth": false
+  },
+  "users": [
+    {
+      "id": 1,
+      "email": "test@test.com",
+      "password": "testtest"
+    },
+    {
+      "email": "test1@test.com",
+      "password": "testtest",
+      "id": 2
+    }
   ]
 }
