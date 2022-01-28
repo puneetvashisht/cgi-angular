@@ -27,7 +27,7 @@
     }
   ],
   "login": {
-    "auth": false
+    "auth": true
   },
   "users": [
     {

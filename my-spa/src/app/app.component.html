@@ -4,11 +4,13 @@
     <ul>
       <li><a class="button" routerLink="/">Home</a></li>
       <li><a class="button" routerLink="/aboutus">About Us</a></li>
-      <li><a class="button" routerLink="/courses">View Courses</a></li>
-      <li><a class="button" routerLink="/addcourse">Add Course</a></li>
-      <li><a class="button" routerLink="/templated">Template Driven</a></li>
-      <li><a class="button" routerLink="/datad">Data Driven</a></li>
-      <li><a class="button" routerLink="/login">Login</a></li>
+
+      <li *ngIf=" userIsAuthenticated"><a class="button" routerLink="/courses">View Courses</a></li>
+      <li *ngIf=" userIsAuthenticated"><a class="button" routerLink="/addcourse">Add Course</a></li>
+      <li *ngIf=" userIsAuthenticated"><a class="button" routerLink="/templated">Template Driven</a></li>
+      <li *ngIf=" userIsAuthenticated"><a class="button" routerLink="/datad">Data Driven</a></li>
+      <li *ngIf=" !userIsAuthenticated"><a class="button" routerLink="/login">Login</a></li>
+      
   
     </ul>
  
