@@ -27,7 +27,11 @@
     }
   ],
   "login": {
-    "auth": true
+    "auth": {
+      "success": true,
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZjNjMjU0MjZjM2I3ODU3MGQ4MGYxZSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNjQzMzY1NzMwLCJleHAiOjE2NDU5NTc3MzB9.3g5rNCXtdfPigke06fPLF83bYqpolXU4z1peN0DMxx0",
+      "expiresIn": 3600
+    }
   },
   "users": [
     {
