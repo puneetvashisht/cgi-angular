@@ -8,7 +8,7 @@ import { AboutusComponent } from './components/aboutus/aboutus.component';
 import { CoursesComponent } from './components/courses/courses.component';
 import { BadgeComponent } from './components/badge.component';
 import { CardComponent } from './components/card/card.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AddCourseComponent } from './components/add-course/add-course.component';
 import { TemplateDrivenComponent } from './components/template-driven/template-driven.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -61,6 +61,10 @@ import { PortalModule } from '@angular/cdk/portal';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { AuthGuard } from './auth.guard';
+import { AuthInterceptor } from './auth.interceptor';
+import { SearchPipe } from './pipes/search.pipe';
+import { LightswitchComponent } from './components/lightswitch/lightswitch.component';
 
 
 const materialModules = [
@@ -120,7 +124,9 @@ const materialModules = [
     DataDrivenComponent,
     UpdateCourseComponent,
     PageNotFoundComponent,
-    LoginComponent
+    LoginComponent,
+    SearchPipe,
+    LightswitchComponent
   ],
   imports: [
     BrowserModule,
@@ -131,7 +137,10 @@ const materialModules = [
     BrowserAnimationsModule,
     ...materialModules
   ],
-  providers: [],
+  providers: [
+    AuthGuard,
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

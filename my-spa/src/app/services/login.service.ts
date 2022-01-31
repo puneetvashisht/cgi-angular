@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 import { AuthData } from 'src/app/auth-data.model';
-// import * as jwt_decode from 'jwt-decode';
+import * as jwt_decode from 'jwt-decode';
 
 @Injectable({
   providedIn: 'root',
@@ -20,9 +20,13 @@ export class LoginService {
     return this.isAuthenticated;
   }
 
+  getToken() {
+    return this.token;
+  }
+
   getDecodedAccessToken(token: string): any {
     try {
-      // return jwt_decode.default(token);
+      return jwt_decode.default(token);
     } catch (Error) {
       return null;
     }

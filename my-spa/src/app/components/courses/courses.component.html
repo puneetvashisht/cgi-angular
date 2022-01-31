@@ -1,3 +1,11 @@
 <div class="row">
-    <app-card class="col " *ngFor="let course of courses" [id]="course.id" [title]="course.title" [summary]="course.summary" (courseDeleted)="handleCourseDeletion($event)"></app-card>
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Search Courses</span>
+        <input type="text" #s (keyup)="0" class="form-control" placeholder="Enter course title" aria-label="Username" aria-describedby="basic-addon1">
+        {{s.value}}
+      </div>
+</div>
+
+<div class="row">
+    <app-card class="col " *ngFor="let course of courses | search: s.value" [id]="course.id" [title]="course.title" [summary]="course.summary" (courseDeleted)="handleCourseDeletion($event)"></app-card>
 </div>

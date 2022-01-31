@@ -1,8 +1,8 @@
 <div class="card" style="width: 18rem;">
     <img src="https://via.placeholder.com/150" class="card-img-top" alt="...">
     <div class="card-body">
-      <h5 class="card-title"><a class="button" [routerLink]="['/updatecourse', title, id]" > {{title}}</a></h5>
-      <p class="card-text">{{summary}}</p>
+      <h5 class="card-title"><a class="button" [routerLink]="['/updatecourse', title, id]" > {{title | uppercase}}</a></h5>
+      <p class="card-text">{{summary | lowercase}}</p>
       <p class="card-text">{{id}}</p>
       <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
       <app-badge caption="Vote"></app-badge>

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ArticleModule } from './articles/article.module';
+import { AuthGuard } from './auth.guard';
 import { AboutusComponent } from './components/aboutus/aboutus.component';
 import { AddCourseComponent } from './components/add-course/add-course.component';
 import { CoursesComponent } from './components/courses/courses.component';
@@ -14,7 +15,7 @@ import { UpdateCourseComponent } from './components/update-course/update-course.
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'aboutus', component: AboutusComponent },
-  { path: 'courses', component: CoursesComponent },
+  { path: 'courses', component: CoursesComponent, canActivate: [AuthGuard] },
   { path: 'addcourse', component: AddCourseComponent },
   { path: 'updatecourse/:title/:id', component: UpdateCourseComponent },
   { path: 'templated', component: TemplateDrivenComponent },
