@@ -36,8 +36,9 @@ export class LoginService {
     const authData: AuthData = { email, password };
 
     this.http
-      .post('http://localhost:3000/user/login', authData)
-      .subscribe((response: any) => {
+      .get('http://localhost:8000/login')
+      .subscribe((res: any) => {
+        let response = res.auth;
         this.isAuthenticated = response.success;
         this.authStatusListener.next(true);
         const token = response.token;
